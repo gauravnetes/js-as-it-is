@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Async js</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    setTimeout(function () {
+        console.log('HI');
+    }, 2000); // will be executed once after 2 seconds (2000 miliseconds)
+
+    // setInterval(function () {
+    //     console.log('Gourav');
+    // }, 2000); // will get executed continously with the interval of 2 seconds
+
+    const sayGourav = function () {
+        console.log("Gourav");
+    }
+    setTimeout(sayGourav, 2000)  
+
+
+    const changeText = function () {
+        document.querySelector('h1').innerHTML = 'Async js at its best'
+    }
+    const changeMe = setTimeout(changeText, 2000)  // The text will change after 2 seconds
+    document.querySelector('#stop').addEventListener('click', function () {
+        clearTimeout(changeMe)
+        console.log("stopped");    
+    })
+    
+
+    
+
+    
+
+</script>
+</html>
